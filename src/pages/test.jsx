@@ -11,7 +11,7 @@ export default function TestPage() {
         stats={JSON.parse(
           `[{"id":"members","icon":"members","label":"Members","value":"10K+"},{"id":"trainers","icon":"trainers","label":"Trainers","value":"50+"}]`,
         )}
-        title="Transform Your Body Today"
+        title="Transform Your Body Today or Better Tomorrow"
         ctaTitle="Start Your Free Trial"
         programs={JSON.parse(
           `[{"id":"program-1","icon":"strength","title":"Strength Lab","duration":"4 sessions / week","subtitle":"Build lean strength with guided progressive overload."},{"id":"program-2","icon":"conditioning","title":"HIIT Burn","duration":"45 min classes","subtitle":"Fast-paced conditioning classes for endurance and fat loss."},{"id":"program-3","icon":"recovery","title":"Mobility Reset","duration":"Recovery studio","subtitle":"Improve recovery, flexibility, and movement quality."}]`,
