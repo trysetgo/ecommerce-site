@@ -9,7 +9,7 @@ export default function TestPage() {
           `[{"id":"plan-1","name":"Starter","price":"Rs 1999/mo","featured":false,"features":["Gym floor access","2 group classes / week","Fitness onboarding"],"description":"Best for first-time members getting into a routine."},{"id":"plan-2","name":"Unlimited","price":"Rs 3499/mo","featured":true,"features":["Unlimited classes","Priority slots","Monthly body assessment"],"description":"Train anytime with full class access and monthly coach review."},{"id":"plan-3","name":"Elite Coaching","price":"Rs 6999/mo","featured":false,"features":["Weekly trainer check-in","Custom program","Nutrition support"],"description":"Premium coaching, nutrition guidance, and personal programming."}]`,
         )}
         stats={JSON.parse(
-          `[{"id":"members","icon":"members","label":"Members","value":"10K+"},{"id":"trainers","icon":"trainers","label":"Trainers","value":"50+"}]`,
+          `[{"id":"members","icon":"members","label":"Members","value":"10K+"},{"id":"trainers","icon":"trainers","label":"Trainers","value":"50+"},{"id":"43b97c61-d23a-46fe-a77b-1a0b1ac9db33","icon":"success","label":"Gym Products Delivered","value":"100+"}]`,
         )}
         title="Transform Your Body Today or Better Tomorrow"
         ctaTitle="Start Your Free Trial"
