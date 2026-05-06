@@ -1,9 +1,11 @@
 import React from "react";
+import ContactPageV1 from "./cms/ContactPageV1.jsx";
 import HomeServicesLanding from "./cms/HomeServicesLanding.jsx";
 import FashionScrollRevealLandingV1 from "./cms/FashionScrollRevealLandingV1.jsx";
 import AboutUsPageV1 from "./cms/AboutUsPageV1.jsx";
 
 const LayoutRendererInternalComponentMap = {
+  ContactPageV1: ContactPageV1,
   "Home Services Landing": HomeServicesLanding,
   FashionScrollRevealLandingV1: FashionScrollRevealLandingV1,
   AboutUsPageV1: AboutUsPageV1,
