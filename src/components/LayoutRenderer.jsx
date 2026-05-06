@@ -1,11 +1,11 @@
 import React from "react";
 import HomeServicesLanding from "./cms/HomeServicesLanding.jsx";
-import GymLanding from "./cms/GymLanding.jsx";
+import FashionScrollRevealLandingV1 from "./cms/FashionScrollRevealLandingV1.jsx";
 import AboutUsPageV1 from "./cms/AboutUsPageV1.jsx";
 
 const LayoutRendererInternalComponentMap = {
   "Home Services Landing": HomeServicesLanding,
-  "Gym Landing": GymLanding,
+  FashionScrollRevealLandingV1: FashionScrollRevealLandingV1,
   AboutUsPageV1: AboutUsPageV1,
 };
 
