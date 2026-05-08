@@ -1,10 +1,22 @@
 import React from "react";
+import DigitalHeaderBanner from "./cms/DigitalHeaderBanner.jsx";
+import EstatePromoBanner from "./cms/EstatePromoBanner.jsx";
+import FeatureGrid from "./cms/FeatureGrid.jsx";
+import Testimonial from "./cms/Testimonial.jsx";
+import CenteredCta from "./cms/CenteredCta.jsx";
+import Footer from "./cms/Footer.jsx";
 import ContactPageV1 from "./cms/ContactPageV1.jsx";
 import HomeServicesLanding from "./cms/HomeServicesLanding.jsx";
 import FashionScrollRevealLandingV1 from "./cms/FashionScrollRevealLandingV1.jsx";
 import AboutUsPageV1 from "./cms/AboutUsPageV1.jsx";
 
 const LayoutRendererInternalComponentMap = {
+  "Digital Header Banner": DigitalHeaderBanner,
+  "Estate Promo Banner": EstatePromoBanner,
+  "Feature Grid": FeatureGrid,
+  Testimonial: Testimonial,
+  "Centered CTA": CenteredCta,
+  Footer: Footer,
   ContactPageV1: ContactPageV1,
   "Home Services Landing": HomeServicesLanding,
   FashionScrollRevealLandingV1: FashionScrollRevealLandingV1,
