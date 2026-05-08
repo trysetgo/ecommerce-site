@@ -28,22 +28,21 @@ const getFlexAlignment = (textAlign) => {
   return "flex-start";
 };
 
-const getTextAlignment = (textAlign) =>
-  textAlign === "justify" ? "left" : textAlign || "left";
+const getTextAlignment = (textAlign) => (textAlign === "justify" ? "left" : textAlign || "left");
 
 const getInitials = (name = "") => {
-  const parts = String(name).trim().split(/\s+/).filter(Boolean).slice(0, 2);
+  const parts = String(name)
+    .trim()
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2);
   if (!parts.length) return "TS";
   return parts.map((part) => part.charAt(0).toUpperCase()).join("");
 };
 
 const renderStars = (accentColor) =>
   Array.from({ length: 5 }, (_, index) => (
-    <span
-      key={index}
-      aria-hidden="true"
-      style={{ color: accentColor, fontSize: "12px" }}
-    >
+    <span key={index} aria-hidden="true" style={{ color: accentColor, fontSize: "12px" }}>
       *
     </span>
   ));
@@ -113,16 +112,7 @@ const SingleTestimonial = ({ testimonial, index, styles }) => {
         }}
       />
 
-      <div
-        style={{
-          position: "relative",
-          zIndex: 1,
-          display: "flex",
-          flexDirection: "column",
-          gap: "18px",
-          alignItems,
-        }}
-      >
+      <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", gap: "18px", alignItems }}>
         <div
           style={{
             width: "100%",
@@ -132,14 +122,7 @@ const SingleTestimonial = ({ testimonial, index, styles }) => {
             gap: "12px",
           }}
         >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "8px",
-              alignItems,
-            }}
-          >
+          <div style={{ display: "flex", flexDirection: "column", gap: "8px", alignItems }}>
             <span
               style={{
                 display: "inline-flex",
@@ -152,29 +135,19 @@ const SingleTestimonial = ({ testimonial, index, styles }) => {
                 letterSpacing: "0.24em",
                 textTransform: "uppercase",
                 color: styles.accentColor,
-                background: hexToRgba(
-                  styles.accentColor,
-                  0.08,
-                  "rgba(236, 48, 128, 0.08)",
-                ),
+                background: hexToRgba(styles.accentColor, 0.08, "rgba(236, 48, 128, 0.08)"),
                 border: `1px solid ${hexToRgba(styles.accentColor, 0.12, "rgba(236, 48, 128, 0.12)")}`,
               }}
             >
               Client Voice
             </span>
-            <div style={{ display: "flex", gap: "4px", alignItems: "center" }}>
-              {renderStars(styles.accentColor)}
-            </div>
+            <div style={{ display: "flex", gap: "4px", alignItems: "center" }}>{renderStars(styles.accentColor)}</div>
           </div>
           <span
             style={{
               fontSize: "42px",
               lineHeight: 1,
-              color: hexToRgba(
-                styles.accentColor,
-                0.55,
-                "rgba(236, 48, 128, 0.55)",
-              ),
+              color: hexToRgba(styles.accentColor, 0.55, "rgba(236, 48, 128, 0.55)"),
               fontWeight: 700,
             }}
             aria-hidden="true"
@@ -280,11 +253,7 @@ const SingleTestimonial = ({ testimonial, index, styles }) => {
             letterSpacing: "0.18em",
             textTransform: "uppercase",
             color: styles.authorTextColor,
-            background: hexToRgba(
-              styles.textColor,
-              0.04,
-              "rgba(15, 23, 42, 0.04)",
-            ),
+            background: hexToRgba(styles.textColor, 0.04, "rgba(15, 23, 42, 0.04)"),
             border: `1px solid ${hexToRgba(styles.textColor, 0.08, "rgba(15, 23, 42, 0.08)")}`,
           }}
         >
@@ -314,11 +283,7 @@ const SingleTestimonial = ({ testimonial, index, styles }) => {
           fontSize: "11px",
           fontWeight: 700,
           letterSpacing: "0.24em",
-          color: hexToRgba(
-            styles.authorTextColor,
-            0.5,
-            "rgba(71, 85, 105, 0.5)",
-          ),
+          color: hexToRgba(styles.authorTextColor, 0.5, "rgba(71, 85, 105, 0.5)"),
         }}
       >
         {`0${index + 1}`}
@@ -362,9 +327,7 @@ const TestimonialComponent = ({
   minItemWidth = "280px",
   sectionMaxWidth = "1180px",
 }) => {
-  const [data, setData] = useState(
-    Array.isArray(testimonials) ? testimonials : [],
-  );
+  const [data, setData] = useState(Array.isArray(testimonials) ? testimonials : []);
   const [isLoading, setIsLoading] = useState(false);
   const [apiError, setApiError] = useState("");
 
@@ -392,12 +355,9 @@ const TestimonialComponent = ({
         const mapped = list.map((item, index) => ({
           id: item.id || `api-${index}`,
           quote: item?.[apiQuoteField] || item.quote || item.testimonial || "",
-          authorName:
-            item?.[apiAuthorField] || item.author_name || item.author || "",
-          authorRole:
-            item?.[apiRoleField] || item.author_role || item.role || "",
-          avatarUrl:
-            item?.[apiAvatarField] || item.avatar_url || item.avatar || "",
+          authorName: item?.[apiAuthorField] || item.author_name || item.author || "",
+          authorRole: item?.[apiRoleField] || item.author_role || item.role || "",
+          avatarUrl: item?.[apiAvatarField] || item.avatar_url || item.avatar || "",
         }));
         if (mapped.length) {
           setData(mapped);
@@ -446,18 +406,14 @@ const TestimonialComponent = ({
 
   const placeholderItems = useMemo(
     () =>
-      Array.from(
-        { length: Math.max(1, Number(apiPlaceholderCount) || 3) },
-        (_, index) => ({
-          id: `placeholder-${index}`,
-        }),
-      ),
+      Array.from({ length: Math.max(1, Number(apiPlaceholderCount) || 3) }, (_, index) => ({
+        id: `placeholder-${index}`,
+      })),
     [apiPlaceholderCount],
   );
 
   const showPlaceholder = apiEndpoint && isLoading && showApiPlaceholder;
-  const showSectionSurface =
-    backgroundColor && backgroundColor !== "transparent";
+  const showSectionSurface = backgroundColor && backgroundColor !== "transparent";
 
   return (
     <div
@@ -475,12 +431,8 @@ const TestimonialComponent = ({
             borderRadius: "34px",
             padding: "clamp(24px, 4vw, 40px)",
             background: backgroundColor,
-            border: showSectionSurface
-              ? `1px solid ${hexToRgba(accentColor, 0.08, "rgba(15, 23, 42, 0.08)")}`
-              : "none",
-            boxShadow: showSectionSurface
-              ? "0 26px 65px rgba(15, 23, 42, 0.06)"
-              : "none",
+            border: showSectionSurface ? `1px solid ${hexToRgba(accentColor, 0.08, "rgba(15, 23, 42, 0.08)")}` : "none",
+            boxShadow: showSectionSurface ? "0 26px 65px rgba(15, 23, 42, 0.06)" : "none",
           }}
         >
           <div
@@ -539,12 +491,7 @@ const TestimonialComponent = ({
               </p>
               <div
                 className="grid"
-                style={{
-                  position: "relative",
-                  zIndex: 1,
-                  gap,
-                  gridTemplateColumns: `repeat(auto-fit, minmax(${minItemWidth}, 1fr))`,
-                }}
+                style={{ position: "relative", zIndex: 1, gap, gridTemplateColumns: `repeat(auto-fit, minmax(${minItemWidth}, 1fr))` }}
               >
                 {placeholderItems.map((item) => (
                   <div
@@ -561,78 +508,15 @@ const TestimonialComponent = ({
                       overflow: "hidden",
                     }}
                   >
-                    <div
-                      className="mb-4 h-6 w-20 animate-pulse rounded-full"
-                      style={{
-                        background: hexToRgba(
-                          accentColor,
-                          0.12,
-                          "rgba(236, 48, 128, 0.12)",
-                        ),
-                      }}
-                    />
-                    <div
-                      className="mb-3 h-4 w-5/6 animate-pulse rounded"
-                      style={{
-                        background: hexToRgba(
-                          textColor,
-                          0.08,
-                          "rgba(15, 23, 42, 0.08)",
-                        ),
-                      }}
-                    />
-                    <div
-                      className="mb-3 h-4 w-4/5 animate-pulse rounded"
-                      style={{
-                        background: hexToRgba(
-                          textColor,
-                          0.08,
-                          "rgba(15, 23, 42, 0.08)",
-                        ),
-                      }}
-                    />
-                    <div
-                      className="mb-8 h-4 w-2/3 animate-pulse rounded"
-                      style={{
-                        background: hexToRgba(
-                          textColor,
-                          0.08,
-                          "rgba(15, 23, 42, 0.08)",
-                        ),
-                      }}
-                    />
+                    <div className="mb-4 h-6 w-20 animate-pulse rounded-full" style={{ background: hexToRgba(accentColor, 0.12, "rgba(236, 48, 128, 0.12)") }} />
+                    <div className="mb-3 h-4 w-5/6 animate-pulse rounded" style={{ background: hexToRgba(textColor, 0.08, "rgba(15, 23, 42, 0.08)") }} />
+                    <div className="mb-3 h-4 w-4/5 animate-pulse rounded" style={{ background: hexToRgba(textColor, 0.08, "rgba(15, 23, 42, 0.08)") }} />
+                    <div className="mb-8 h-4 w-2/3 animate-pulse rounded" style={{ background: hexToRgba(textColor, 0.08, "rgba(15, 23, 42, 0.08)") }} />
                     <div className="flex items-center gap-3">
-                      <div
-                        className="h-12 w-12 animate-pulse rounded-full"
-                        style={{
-                          background: hexToRgba(
-                            secondaryAccentColor,
-                            0.12,
-                            "rgba(99, 102, 241, 0.12)",
-                          ),
-                        }}
-                      />
+                      <div className="h-12 w-12 animate-pulse rounded-full" style={{ background: hexToRgba(secondaryAccentColor, 0.12, "rgba(99, 102, 241, 0.12)") }} />
                       <div className="flex-1">
-                        <div
-                          className="mb-2 h-3 w-1/2 animate-pulse rounded"
-                          style={{
-                            background: hexToRgba(
-                              textColor,
-                              0.08,
-                              "rgba(15, 23, 42, 0.08)",
-                            ),
-                          }}
-                        />
-                        <div
-                          className="h-3 w-1/3 animate-pulse rounded"
-                          style={{
-                            background: hexToRgba(
-                              textColor,
-                              0.08,
-                              "rgba(15, 23, 42, 0.08)",
-                            ),
-                          }}
-                        />
+                        <div className="mb-2 h-3 w-1/2 animate-pulse rounded" style={{ background: hexToRgba(textColor, 0.08, "rgba(15, 23, 42, 0.08)") }} />
+                        <div className="h-3 w-1/3 animate-pulse rounded" style={{ background: hexToRgba(textColor, 0.08, "rgba(15, 23, 42, 0.08)") }} />
                       </div>
                     </div>
                   </div>
@@ -642,12 +526,7 @@ const TestimonialComponent = ({
           ) : (
             <div
               className="grid"
-              style={{
-                position: "relative",
-                zIndex: 1,
-                gap,
-                gridTemplateColumns: `repeat(auto-fit, minmax(${minItemWidth}, 1fr))`,
-              }}
+              style={{ position: "relative", zIndex: 1, gap, gridTemplateColumns: `repeat(auto-fit, minmax(${minItemWidth}, 1fr))` }}
             >
               {data.length > 0 ? (
                 data.map((testimonial, index) => (
@@ -659,14 +538,7 @@ const TestimonialComponent = ({
                   />
                 ))
               ) : (
-                <p
-                  style={{
-                    gridColumn: "1 / -1",
-                    textAlign: "center",
-                    color: authorTextColor,
-                    margin: 0,
-                  }}
-                >
+                <p style={{ gridColumn: "1 / -1", textAlign: "center", color: authorTextColor, margin: 0 }}>
                   No testimonials to display
                 </p>
               )}
@@ -706,10 +578,7 @@ TestimonialComponent.propTypes = {
   apiRoleField: PropTypes.string,
   apiAvatarField: PropTypes.string,
   showApiPlaceholder: PropTypes.bool,
-  apiPlaceholderCount: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.string,
-  ]),
+  apiPlaceholderCount: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   apiLoadingText: PropTypes.string,
   apiErrorText: PropTypes.string,
   backgroundColor: PropTypes.string,
@@ -740,16 +609,14 @@ export const testimonialComponentDefaultProps = {
   testimonials: [
     {
       id: "testimonial-1",
-      quote:
-        "The editor now feels like a premium workspace instead of a rigid form builder. Shipping polished pages takes a fraction of the time.",
+      quote: "The editor now feels like a premium workspace instead of a rigid form builder. Shipping polished pages takes a fraction of the time.",
       authorName: "Olivia Chen",
       authorRole: "Product Marketing Director",
       avatarUrl: "",
     },
     {
       id: "testimonial-2",
-      quote:
-        "We can prototype, refine, and launch faster because the system gives our content team far more creative range without needing engineering support.",
+      quote: "We can prototype, refine, and launch faster because the system gives our content team far more creative range without needing engineering support.",
       authorName: "Marcus Lee",
       authorRole: "Growth Design Lead",
       avatarUrl: "",
@@ -763,10 +630,8 @@ export const testimonialComponentDefaultProps = {
   showApiPlaceholder: true,
   apiPlaceholderCount: 3,
   apiLoadingText: "Loading testimonials from API...",
-  apiErrorText:
-    "Unable to fetch testimonials from API. Showing fallback items.",
-  backgroundColor:
-    "linear-gradient(135deg, #fff7fb 0%, #f8fafc 52%, #eef2ff 100%)",
+  apiErrorText: "Unable to fetch testimonials from API. Showing fallback items.",
+  backgroundColor: "linear-gradient(135deg, #fff7fb 0%, #f8fafc 52%, #eef2ff 100%)",
   cardBackgroundColor: "linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)",
   textColor: "#0f172a",
   authorTextColor: "#475569",

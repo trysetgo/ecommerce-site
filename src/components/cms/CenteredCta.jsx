@@ -59,17 +59,10 @@ const CenteredCTA = ({
 }) => {
   const defaultButtons = [
     { id: "1", text: "Shop Now", link: "#", style: "primary", target: "_self" },
-    {
-      id: "2",
-      text: "Contact Us",
-      link: "#",
-      style: "secondary",
-      target: "_self",
-    },
+    { id: "2", text: "Contact Us", link: "#", style: "secondary", target: "_self" },
   ];
 
-  const displayButtons =
-    Array.isArray(buttons) && buttons.length ? buttons : defaultButtons;
+  const displayButtons = Array.isArray(buttons) && buttons.length ? buttons : defaultButtons;
 
   const getButtonStyles = (buttonStyle) => {
     switch (buttonStyle) {
@@ -121,12 +114,8 @@ const CenteredCTA = ({
     opacity: floatingShapeOpacity,
     pointerEvents: "none",
     mixBlendMode: "screen",
-    ...(floatingShapePosition.includes("top")
-      ? { top: floatingShapeOffset }
-      : { bottom: floatingShapeOffset }),
-    ...(floatingShapePosition.includes("left")
-      ? { left: floatingShapeOffset }
-      : { right: floatingShapeOffset }),
+    ...(floatingShapePosition.includes("top") ? { top: floatingShapeOffset } : { bottom: floatingShapeOffset }),
+    ...(floatingShapePosition.includes("left") ? { left: floatingShapeOffset } : { right: floatingShapeOffset }),
   };
 
   const buttonWrapperStyle = {
@@ -134,12 +123,7 @@ const CenteredCTA = ({
     display: "flex",
     flexWrap: "wrap",
     alignItems: "center",
-    justifyContent:
-      textAlign === "left"
-        ? "flex-start"
-        : textAlign === "right"
-          ? "flex-end"
-          : "center",
+    justifyContent: textAlign === "left" ? "flex-start" : textAlign === "right" ? "flex-end" : "center",
     gap: buttonGap,
   };
 
@@ -192,14 +176,7 @@ const CenteredCTA = ({
             </span>
           )}
           {headline && (
-            <h2
-              style={{
-                margin: 0,
-                color: textColor,
-                fontSize: headlineFontSize,
-                fontWeight: headlineFontWeight,
-              }}
-            >
+            <h2 style={{ margin: 0, color: textColor, fontSize: headlineFontSize, fontWeight: headlineFontWeight }}>
               {headline}
             </h2>
           )}
@@ -240,9 +217,7 @@ const CenteredCTA = ({
                 key={button.id}
                 href={button.link || "#"}
                 target={button.target || "_self"}
-                rel={
-                  button.target === "_blank" ? "noopener noreferrer" : undefined
-                }
+                rel={button.target === "_blank" ? "noopener noreferrer" : undefined}
                 style={{
                   ...getButtonStyles(button.style),
                   minWidth: buttonMinWidth,
@@ -331,12 +306,7 @@ CenteredCTA.propTypes = {
   floatingShapeSize: PropTypes.string,
   floatingShapeBlur: PropTypes.string,
   floatingShapeOffset: PropTypes.string,
-  floatingShapePosition: PropTypes.oneOf([
-    "top-right",
-    "top-left",
-    "bottom-right",
-    "bottom-left",
-  ]),
+  floatingShapePosition: PropTypes.oneOf(["top-right", "top-left", "bottom-right", "bottom-left"]),
   floatingShapeOpacity: PropTypes.number,
   style: PropTypes.object,
   className: PropTypes.string,
@@ -347,8 +317,7 @@ export const centeredCTADefaultProps = {
   subtext: "Be part of a growing family that values you.",
   buttons: [],
   background: "linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%)",
-  backgroundOverlay:
-    "radial-gradient(circle at top right, rgba(236,48,124,0.25), transparent 55%)",
+  backgroundOverlay: "radial-gradient(circle at top right, rgba(236,48,124,0.25), transparent 55%)",
   overlayBlendMode: "soft-light",
   overlayOpacity: 1,
   textColor: "#111827",

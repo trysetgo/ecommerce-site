@@ -144,11 +144,7 @@ const FooterComponent = (rawProps) => {
   const iconSize = parsePx(socialIconSize, 28);
 
   const shapeRadius =
-    socialIconShape === "square"
-      ? "6px"
-      : socialIconShape === "rounded"
-        ? "10px"
-        : "9999px";
+    socialIconShape === "square" ? "6px" : socialIconShape === "rounded" ? "10px" : "9999px";
 
   return (
     <footer
@@ -173,9 +169,7 @@ const FooterComponent = (rawProps) => {
         className="mx-auto"
         style={{
           maxWidth: contentMaxWidth,
-          "--footer-link-hover-color": isHex(linkHoverColor)
-            ? linkHoverColor
-            : "#F9FAFB",
+          "--footer-link-hover-color": isHex(linkHoverColor) ? linkHoverColor : "#F9FAFB",
         }}
       >
         <div
@@ -190,11 +184,7 @@ const FooterComponent = (rawProps) => {
         >
           <div className="footer-brand-section" style={{ minWidth: 0 }}>
             {logoSrc ? (
-              <img
-                src={logoSrc}
-                alt={logoAlt}
-                style={{ maxWidth: logoMaxWidth, marginBottom: "12px" }}
-              />
+              <img src={logoSrc} alt={logoAlt} style={{ maxWidth: logoMaxWidth, marginBottom: "12px" }} />
             ) : null}
             {logoText ? (
               <div
@@ -281,22 +271,13 @@ const FooterComponent = (rawProps) => {
                       justifyContent: "center",
                     }}
                   >
-                    <SocialIconPlaceholder
-                      platform={social.platform || "link"}
-                      color={linkColor}
-                    />
+                    <SocialIconPlaceholder platform={social.platform || "link"} color={linkColor} />
                   </span>
                 </a>
               ))}
             </div>
           )}
-          <p
-            style={{
-              margin: 0,
-              color: textColor,
-              textAlign: footerLayout === "stacked" ? "center" : "right",
-            }}
-          >
+          <p style={{ margin: 0, color: textColor, textAlign: footerLayout === "stacked" ? "center" : "right" }}>
             {copyrightText}
           </p>
         </div>

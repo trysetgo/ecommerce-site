@@ -38,32 +38,28 @@ const defaultServices = [
     id: "service-1",
     icon: "cleaning",
     title: "Deep Home Cleaning",
-    description:
-      "Kitchen, bathroom, bedroom, and living area refresh with eco-safe supplies.",
+    description: "Kitchen, bathroom, bedroom, and living area refresh with eco-safe supplies.",
     price: "Starts at $79",
   },
   {
     id: "service-2",
     icon: "repair",
     title: "Handyman Repairs",
-    description:
-      "Furniture fixes, wall-mounts, minor electrical work, and home touch-ups.",
+    description: "Furniture fixes, wall-mounts, minor electrical work, and home touch-ups.",
     price: "Starts at $49",
   },
   {
     id: "service-3",
     icon: "inspection",
     title: "Appliance Servicing",
-    description:
-      "Preventive maintenance and issue diagnosis for ACs, washers, and kitchen gear.",
+    description: "Preventive maintenance and issue diagnosis for ACs, washers, and kitchen gear.",
     price: "Starts at $59",
   },
   {
     id: "service-4",
     icon: "booking",
     title: "Move-in Setup",
-    description:
-      "Cleaning, utility setup support, furniture assembly, and first-day essentials.",
+    description: "Cleaning, utility setup support, furniture assembly, and first-day essentials.",
     price: "Starts at $129",
   },
 ];
@@ -73,22 +69,19 @@ const defaultSteps = [
     id: "step-1",
     icon: "request",
     title: "Choose a Service",
-    description:
-      "Pick a category, time slot, and service details in under two minutes.",
+    description: "Pick a category, time slot, and service details in under two minutes.",
   },
   {
     id: "step-2",
     icon: "match",
     title: "Get Matched Fast",
-    description:
-      "We assign a vetted professional based on location, skill, and availability.",
+    description: "We assign a vetted professional based on location, skill, and availability.",
   },
   {
     id: "step-3",
     icon: "delivery",
     title: "Done Right, On Time",
-    description:
-      "Track arrival, review pricing, and manage follow-up directly from one place.",
+    description: "Track arrival, review pricing, and manage follow-up directly from one place.",
   },
 ];
 
@@ -155,9 +148,7 @@ export const homeServicesLandingDefaultProps = {
 };
 
 const externalTarget = (href) =>
-  href && href.startsWith("http")
-    ? { target: "_blank", rel: "noreferrer" }
-    : {};
+  href && href.startsWith("http") ? { target: "_blank", rel: "noreferrer" } : {};
 
 const HomeServicesLanding = (incomingProps) => {
   const props = { ...homeServicesLandingDefaultProps, ...incomingProps };
@@ -210,11 +201,7 @@ const HomeServicesLanding = (incomingProps) => {
   } = props;
 
   return (
-    <section
-      id={id}
-      className={`w-full ${className}`}
-      style={{ background, ...style }}
-    >
+    <section id={id} className={`w-full ${className}`} style={{ background, ...style }}>
       <style>{`
         .home-services-card {
           transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
@@ -226,47 +213,24 @@ const HomeServicesLanding = (incomingProps) => {
       `}</style>
 
       <div className="mx-auto flex max-w-7xl flex-col gap-10 px-4 py-6 sm:px-6 lg:px-8 lg:py-10">
-        <div
-          className="relative overflow-hidden rounded-[34px] border bg-white"
-          style={{ borderColor }}
-        >
-          <img
-            src={heroImage}
-            alt={title}
-            className="absolute inset-y-0 right-0 hidden h-full w-1/2 object-cover lg:block"
-          />
-          <div
-            className="absolute inset-y-0 right-0 hidden w-1/2 lg:block"
-            style={{ background: heroOverlay }}
-          />
+        <div className="relative overflow-hidden rounded-[34px] border bg-white" style={{ borderColor }}>
+          <img src={heroImage} alt={title} className="absolute inset-y-0 right-0 hidden h-full w-1/2 object-cover lg:block" />
+          <div className="absolute inset-y-0 right-0 hidden w-1/2 lg:block" style={{ background: heroOverlay }} />
           <div className="relative grid gap-8 px-6 py-8 sm:px-8 lg:min-h-[620px] lg:grid-cols-[1.1fr_0.9fr] lg:px-12 lg:py-12">
             <div className="flex flex-col justify-between gap-8">
               <div className="space-y-6">
                 <div
                   className="inline-flex w-fit items-center gap-2 rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.3em]"
-                  style={{
-                    borderColor,
-                    color: textColor,
-                    backgroundColor: softSurfaceColor,
-                  }}
+                  style={{ borderColor, color: textColor, backgroundColor: softSurfaceColor }}
                 >
-                  <BadgeCheck
-                    className="h-4 w-4"
-                    style={{ color: accentColor }}
-                  />
+                  <BadgeCheck className="h-4 w-4" style={{ color: accentColor }} />
                   {accentTag}
                 </div>
                 <div className="max-w-2xl space-y-4">
-                  <h1
-                    className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl"
-                    style={{ color: headingColor }}
-                  >
+                  <h1 className="text-4xl font-semibold leading-tight sm:text-5xl lg:text-6xl" style={{ color: headingColor }}>
                     {title}
                   </h1>
-                  <p
-                    className="max-w-xl text-base leading-7 sm:text-lg"
-                    style={{ color: textColor }}
-                  >
+                  <p className="max-w-xl text-base leading-7 sm:text-lg" style={{ color: textColor }}>
                     {subtitle}
                   </p>
                 </div>
@@ -283,11 +247,7 @@ const HomeServicesLanding = (incomingProps) => {
                   <a
                     href={secondaryCtaHref}
                     className="inline-flex items-center gap-2 rounded-full border px-6 py-3 text-sm font-semibold"
-                    style={{
-                      borderColor,
-                      color: headingColor,
-                      backgroundColor: "#ffffff",
-                    }}
+                    style={{ borderColor, color: headingColor, backgroundColor: "#ffffff" }}
                     {...externalTarget(secondaryCtaHref)}
                   >
                     {secondaryCtaText}
@@ -298,19 +258,9 @@ const HomeServicesLanding = (incomingProps) => {
 
               <div className="grid gap-3 sm:grid-cols-3">
                 {trustPoints.map((point, index) => (
-                  <div
-                    key={`${point}-${index}`}
-                    className="rounded-2xl border px-4 py-4"
-                    style={{ borderColor, backgroundColor: "#ffffff" }}
-                  >
-                    <ShieldCheck
-                      className="h-5 w-5"
-                      style={{ color: accentColor }}
-                    />
-                    <p
-                      className="mt-3 text-sm font-medium"
-                      style={{ color: headingColor }}
-                    >
+                  <div key={`${point}-${index}`} className="rounded-2xl border px-4 py-4" style={{ borderColor, backgroundColor: "#ffffff" }}>
+                    <ShieldCheck className="h-5 w-5" style={{ color: accentColor }} />
+                    <p className="mt-3 text-sm font-medium" style={{ color: headingColor }}>
                       {point}
                     </p>
                   </div>
@@ -319,26 +269,14 @@ const HomeServicesLanding = (incomingProps) => {
             </div>
 
             <div className="flex items-end justify-end">
-              <div
-                className="home-services-card w-full max-w-md rounded-[28px] border p-6"
-                style={{ borderColor, backgroundColor: surfaceColor }}
-              >
-                <p
-                  className="text-xs font-semibold uppercase tracking-[0.3em]"
-                  style={{ color: accentColor }}
-                >
+              <div className="home-services-card w-full max-w-md rounded-[28px] border p-6" style={{ borderColor, backgroundColor: surfaceColor }}>
+                <p className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: accentColor }}>
                   {heroPanelLabel}
                 </p>
-                <h2
-                  className="mt-4 text-2xl font-semibold"
-                  style={{ color: headingColor }}
-                >
+                <h2 className="mt-4 text-2xl font-semibold" style={{ color: headingColor }}>
                   {heroPanelTitle}
                 </h2>
-                <p
-                  className="mt-3 text-sm leading-7"
-                  style={{ color: textColor }}
-                >
+                <p className="mt-3 text-sm leading-7" style={{ color: textColor }}>
                   {heroPanelText}
                 </p>
                 <div className="mt-6 space-y-3">
@@ -347,20 +285,9 @@ const HomeServicesLanding = (incomingProps) => {
                     { label: "Average rating", value: "4.9 / 5" },
                     { label: "Support", value: "7 days a week" },
                   ].map((item) => (
-                    <div
-                      key={item.label}
-                      className="flex items-center justify-between rounded-2xl border px-4 py-3"
-                      style={{ borderColor, backgroundColor: softSurfaceColor }}
-                    >
-                      <p className="text-sm" style={{ color: lightTextColor }}>
-                        {item.label}
-                      </p>
-                      <p
-                        className="text-sm font-semibold"
-                        style={{ color: headingColor }}
-                      >
-                        {item.value}
-                      </p>
+                    <div key={item.label} className="flex items-center justify-between rounded-2xl border px-4 py-3" style={{ borderColor, backgroundColor: softSurfaceColor }}>
+                      <p className="text-sm" style={{ color: lightTextColor }}>{item.label}</p>
+                      <p className="text-sm font-semibold" style={{ color: headingColor }}>{item.value}</p>
                     </div>
                   ))}
                 </div>
@@ -369,21 +296,12 @@ const HomeServicesLanding = (incomingProps) => {
           </div>
         </div>
 
-        <div
-          id="services"
-          className="rounded-[32px] bg-white px-6 py-8 shadow-[0_28px_80px_rgba(14,30,37,0.08)] sm:px-8 lg:px-10"
-        >
+        <div id="services" className="rounded-[32px] bg-white px-6 py-8 shadow-[0_28px_80px_rgba(14,30,37,0.08)] sm:px-8 lg:px-10">
           <div className="mx-auto max-w-2xl text-center">
-            <p
-              className="text-xs font-semibold uppercase tracking-[0.3em]"
-              style={{ color: accentColor }}
-            >
+            <p className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: accentColor }}>
               Service grid
             </p>
-            <h2
-              className="mt-3 text-3xl font-semibold"
-              style={{ color: headingColor }}
-            >
+            <h2 className="mt-3 text-3xl font-semibold" style={{ color: headingColor }}>
               {servicesTitle}
             </h2>
             <p className="mt-3 text-sm leading-7" style={{ color: textColor }}>
@@ -400,31 +318,16 @@ const HomeServicesLanding = (incomingProps) => {
                   className="home-services-card rounded-[24px] border px-5 py-6"
                   style={{ borderColor, backgroundColor: surfaceColor }}
                 >
-                  <div
-                    className="inline-flex h-12 w-12 items-center justify-center rounded-2xl"
-                    style={{ backgroundColor: softSurfaceColor }}
-                  >
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl" style={{ backgroundColor: softSurfaceColor }}>
                     <Icon className="h-6 w-6" style={{ color: accentColor }} />
                   </div>
-                  <h3
-                    className="mt-5 text-lg font-semibold"
-                    style={{ color: headingColor }}
-                  >
+                  <h3 className="mt-5 text-lg font-semibold" style={{ color: headingColor }}>
                     {service.title}
                   </h3>
-                  <p
-                    className="mt-3 text-sm leading-7"
-                    style={{ color: textColor }}
-                  >
+                  <p className="mt-3 text-sm leading-7" style={{ color: textColor }}>
                     {service.description}
                   </p>
-                  <div
-                    className="mt-4 inline-flex rounded-full px-3 py-1 text-xs font-semibold"
-                    style={{
-                      backgroundColor: softSurfaceColor,
-                      color: headingColor,
-                    }}
-                  >
+                  <div className="mt-4 inline-flex rounded-full px-3 py-1 text-xs font-semibold" style={{ backgroundColor: softSurfaceColor, color: headingColor }}>
                     {service.price}
                   </div>
                 </article>
@@ -434,20 +337,11 @@ const HomeServicesLanding = (incomingProps) => {
         </div>
 
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-          <div
-            className="rounded-[32px] border bg-white px-6 py-8 shadow-[0_28px_80px_rgba(14,30,37,0.08)] sm:px-8"
-            style={{ borderColor }}
-          >
-            <p
-              className="text-xs font-semibold uppercase tracking-[0.3em]"
-              style={{ color: accentColor }}
-            >
+          <div className="rounded-[32px] border bg-white px-6 py-8 shadow-[0_28px_80px_rgba(14,30,37,0.08)] sm:px-8" style={{ borderColor }}>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: accentColor }}>
               How it works
             </p>
-            <h2
-              className="mt-3 text-3xl font-semibold"
-              style={{ color: headingColor }}
-            >
+            <h2 className="mt-3 text-3xl font-semibold" style={{ color: headingColor }}>
               {stepsTitle}
             </h2>
             <p className="mt-3 text-sm leading-7" style={{ color: textColor }}>
@@ -458,42 +352,19 @@ const HomeServicesLanding = (incomingProps) => {
               {steps.map((step, index) => {
                 const Icon = stepIconMap[step.icon] || CalendarCheck2;
                 return (
-                  <div
-                    key={step.id}
-                    className="home-services-card rounded-[24px] border px-5 py-5"
-                    style={{
-                      borderColor,
-                      backgroundColor:
-                        index === 1 ? softSurfaceColor : surfaceColor,
-                    }}
-                  >
+                  <div key={step.id} className="home-services-card rounded-[24px] border px-5 py-5" style={{ borderColor, backgroundColor: index === 1 ? softSurfaceColor : surfaceColor }}>
                     <div className="flex items-start gap-4">
-                      <div
-                        className="inline-flex h-12 w-12 items-center justify-center rounded-2xl"
-                        style={{ backgroundColor: "#ffffff" }}
-                      >
-                        <Icon
-                          className="h-6 w-6"
-                          style={{ color: accentColor }}
-                        />
+                      <div className="inline-flex h-12 w-12 items-center justify-center rounded-2xl" style={{ backgroundColor: "#ffffff" }}>
+                        <Icon className="h-6 w-6" style={{ color: accentColor }} />
                       </div>
                       <div>
-                        <p
-                          className="text-xs font-semibold uppercase tracking-[0.24em]"
-                          style={{ color: lightTextColor }}
-                        >
+                        <p className="text-xs font-semibold uppercase tracking-[0.24em]" style={{ color: lightTextColor }}>
                           Step {index + 1}
                         </p>
-                        <h3
-                          className="mt-2 text-lg font-semibold"
-                          style={{ color: headingColor }}
-                        >
+                        <h3 className="mt-2 text-lg font-semibold" style={{ color: headingColor }}>
                           {step.title}
                         </h3>
-                        <p
-                          className="mt-2 text-sm leading-7"
-                          style={{ color: textColor }}
-                        >
+                        <p className="mt-2 text-sm leading-7" style={{ color: textColor }}>
                           {step.description}
                         </p>
                       </div>
@@ -505,28 +376,15 @@ const HomeServicesLanding = (incomingProps) => {
           </div>
 
           <div className="flex flex-col gap-6">
-            <div
-              className="rounded-[32px] border bg-white px-6 py-6 shadow-[0_28px_80px_rgba(14,30,37,0.08)]"
-              style={{ borderColor }}
-            >
-              <p
-                className="text-xs font-semibold uppercase tracking-[0.3em]"
-                style={{ color: accentColor }}
-              >
+            <div className="rounded-[32px] border bg-white px-6 py-6 shadow-[0_28px_80px_rgba(14,30,37,0.08)]" style={{ borderColor }}>
+              <p className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: accentColor }}>
                 Testimonial
               </p>
-              <p
-                className="mt-4 text-lg leading-8"
-                style={{ color: headingColor }}
-              >
+              <p className="mt-4 text-lg leading-8" style={{ color: headingColor }}>
                 "{testimonialQuote}"
               </p>
               <div className="mt-6 flex items-center gap-4">
-                <img
-                  src={testimonialImage}
-                  alt={testimonialName}
-                  className="h-14 w-14 rounded-full object-cover"
-                />
+                <img src={testimonialImage} alt={testimonialName} className="h-14 w-14 rounded-full object-cover" />
                 <div>
                   <p className="font-semibold" style={{ color: headingColor }}>
                     {testimonialName}
@@ -536,90 +394,46 @@ const HomeServicesLanding = (incomingProps) => {
                   </p>
                 </div>
               </div>
-              <div
-                className="mt-5 inline-flex items-center gap-1 text-sm font-medium"
-                style={{ color: accentColor }}
-              >
+              <div className="mt-5 inline-flex items-center gap-1 text-sm font-medium" style={{ color: accentColor }}>
                 <Star className="h-4 w-4 fill-current" />
                 4.9 average satisfaction
               </div>
             </div>
 
-            <div
-              className="rounded-[32px] border bg-white px-6 py-6 shadow-[0_28px_80px_rgba(14,30,37,0.08)]"
-              style={{ borderColor }}
-            >
-              <p
-                className="text-xs font-semibold uppercase tracking-[0.3em]"
-                style={{ color: accentColor }}
-              >
+            <div className="rounded-[32px] border bg-white px-6 py-6 shadow-[0_28px_80px_rgba(14,30,37,0.08)]" style={{ borderColor }}>
+              <p className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: accentColor }}>
                 Pricing estimate
               </p>
-              <h3
-                className="mt-3 text-2xl font-semibold"
-                style={{ color: headingColor }}
-              >
+              <h3 className="mt-3 text-2xl font-semibold" style={{ color: headingColor }}>
                 {estimateTitle}
               </h3>
-              <p
-                className="mt-3 text-sm leading-7"
-                style={{ color: textColor }}
-              >
+              <p className="mt-3 text-sm leading-7" style={{ color: textColor }}>
                 {estimateSubtitle}
               </p>
               <div className="mt-6 space-y-3">
                 {estimateItems.map((item) => (
-                  <div
-                    key={item.id}
-                    className="flex items-center justify-between rounded-2xl border px-4 py-3"
-                    style={{ borderColor, backgroundColor: softSurfaceColor }}
-                  >
-                    <p className="text-sm" style={{ color: textColor }}>
-                      {item.label}
-                    </p>
-                    <p
-                      className="text-sm font-semibold"
-                      style={{ color: headingColor }}
-                    >
-                      {item.value}
-                    </p>
+                  <div key={item.id} className="flex items-center justify-between rounded-2xl border px-4 py-3" style={{ borderColor, backgroundColor: softSurfaceColor }}>
+                    <p className="text-sm" style={{ color: textColor }}>{item.label}</p>
+                    <p className="text-sm font-semibold" style={{ color: headingColor }}>{item.value}</p>
                   </div>
                 ))}
               </div>
-              <div
-                className="mt-6 flex items-center justify-between rounded-[24px] px-4 py-4"
-                style={{ backgroundColor: "#0f172a" }}
-              >
-                <p className="text-sm" style={{ color: "#cbd5e1" }}>
-                  {estimateTotalLabel}
-                </p>
-                <p className="text-xl font-semibold text-white">
-                  {estimateTotalValue}
-                </p>
+              <div className="mt-6 flex items-center justify-between rounded-[24px] px-4 py-4" style={{ backgroundColor: "#0f172a" }}>
+                <p className="text-sm" style={{ color: "#cbd5e1" }}>{estimateTotalLabel}</p>
+                <p className="text-xl font-semibold text-white">{estimateTotalValue}</p>
               </div>
             </div>
           </div>
         </div>
 
-        <div
-          id="book-now"
-          className="rounded-[34px] border px-6 py-8 sm:px-8 lg:px-10"
-          style={{ borderColor, backgroundColor: "#0f172a" }}
-        >
+        <div id="book-now" className="rounded-[34px] border px-6 py-8 sm:px-8 lg:px-10" style={{ borderColor, backgroundColor: "#0f172a" }}>
           <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-center">
             <div>
-              <p
-                className="text-xs font-semibold uppercase tracking-[0.3em]"
-                style={{ color: accentColor }}
-              >
+              <p className="text-xs font-semibold uppercase tracking-[0.3em]" style={{ color: accentColor }}>
                 Book now
               </p>
-              <h2 className="mt-3 text-3xl font-semibold text-white">
-                {ctaTitle}
-              </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300">
-                {ctaSubtitle}
-              </p>
+              <h2 className="mt-3 text-3xl font-semibold text-white">{ctaTitle}</h2>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-slate-300">{ctaSubtitle}</p>
             </div>
             <div className="flex flex-wrap gap-3">
               <a
@@ -672,7 +486,7 @@ HomeServicesLanding.propTypes = {
       title: PropTypes.string,
       description: PropTypes.string,
       price: PropTypes.string,
-    }),
+    })
   ),
   stepsTitle: PropTypes.string,
   stepsSubtitle: PropTypes.string,
@@ -682,7 +496,7 @@ HomeServicesLanding.propTypes = {
       icon: PropTypes.string,
       title: PropTypes.string,
       description: PropTypes.string,
-    }),
+    })
   ),
   testimonialQuote: PropTypes.string,
   testimonialName: PropTypes.string,
@@ -695,7 +509,7 @@ HomeServicesLanding.propTypes = {
       id: PropTypes.string,
       label: PropTypes.string,
       value: PropTypes.string,
-    }),
+    })
   ),
   estimateTotalLabel: PropTypes.string,
   estimateTotalValue: PropTypes.string,

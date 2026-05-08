@@ -1,25 +1,23 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import HomePage from './pages/Home.jsx';
+import TestPage from './pages/Test.jsx';
+import CategoryPage from './pages/Category.jsx';
+import ContactPage from './pages/Contact.jsx';
+import MarketingEstateHomePagePage from './pages/MarketingEstateHomePage.jsx';
 
-import MarketingEstateHomePage from "./pages/marketing-estate-home-page.jsx";
-import Contact from "./pages/contact.jsx";
-import Category from "./pages/category.jsx";
-import Test from "./pages/test.jsx";
-import Home from "./pages/home.jsx";
-
-export default function App() {
+function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
-        <Route
-          path="/marketing-estate-home-page"
-          element={<MarketingEstateHomePage />}
-        />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/category" element={<Category />} />
-        <Route path="/test" element={<Test />} />
-        <Route path="/" element={<Home />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/test" element={<TestPage />} />
+          <Route path="/category" element={<CategoryPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/marketing-estate-home-page" element={<MarketingEstateHomePagePage />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
+
+export default App;

@@ -1,119 +1,18 @@
-import React from "react";
-import DigitalHeaderBanner from "../components/cms/DigitalHeaderBanner.jsx";
-import EstatePromoBanner from "../components/cms/EstatePromoBanner.jsx";
-import FeatureGrid from "../components/cms/FeatureGrid.jsx";
-import Testimonial from "../components/cms/Testimonial.jsx";
-import CenteredCta from "../components/cms/CenteredCta.jsx";
-import Footer from "../components/cms/Footer.jsx";
+import React from 'react';
+import DigitalHeaderBanner from '../components/cms/DigitalHeaderBanner.jsx';
+import EstatePromoBanner from '../components/cms/EstatePromoBanner.jsx';
+import FeatureGrid from '../components/cms/FeatureGrid.jsx';
+import Testimonial from '../components/cms/Testimonial.jsx';
+import CenteredCta from '../components/cms/CenteredCta.jsx';
+import Footer from '../components/cms/Footer.jsx';
 
-export default function MarketingEstateHomePagePage() {
-  return (
-    <>
-      <DigitalHeaderBanner
-        cards={JSON.parse(
-          `[{"link":"#offers","title":"Exclusive Offers","description":"Get the best deals on top brands"},{"link":"#new-arrivals","title":"New Arrivals","description":"Explore the latest trends in fashion and technology"},{"link":"#customer-favorites","title":"Customer Favorites","description":"Check out what our customers love the most"}]`,
-        )}
-        title="Welcome to Our Ecommerce Platform"
-        ctaText="Shop Now"
-        subtitle="Discover the best products tailored just for you"
-        backgroundImage="https://images.unsplash.com/photo-1511376779570-1a0b8f9e0c3b"
-      ></DigitalHeaderBanner>
-      <EstatePromoBanner
-        title="Exclusive Property Deals"
-        subtitle="Discover your dream home with our limited-time offers"
-        saleBadge="Sale"
-        socialLinks={JSON.parse(
-          `[{"url":"https://facebook.com","platform":"Facebook"},{"url":"https://instagram.com","platform":"Instagram"},{"url":"https://twitter.com","platform":"Twitter"}]`,
-        )}
-        backgroundImage="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0"
-      ></EstatePromoBanner>
-      <FeatureGrid
-        features={JSON.parse(
-          `[{"icon":"https://images.unsplash.com/photo-1542744095-9a2f1c4d3a4d","title":"User-Friendly Interface","description":"Navigate our site with ease and enjoy a seamless shopping experience."},{"icon":"https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0","title":"Secure Payments","description":"Shop confidently with our secure payment options and data protection."},{"icon":"https://images.unsplash.com/photo-1521747116042-5a810fda9664","title":"Fast Shipping","description":"Get your orders delivered quickly with our efficient shipping services."},{"icon":"https://images.unsplash.com/photo-1512004202024-8c9d0c8b1c1d","title":"24/7 Customer Support","description":"Our dedicated support team is here to assist you anytime."}]`,
-        )}
-      ></FeatureGrid>
-      <Testimonial
-        gap="24px"
-        border="1px solid rgba(226, 232, 240, 0.9)"
-        padding="28px"
-        boxShadow="0 18px 45px rgba(15, 23, 42, 0.08)"
-        textAlign="left"
-        textColor="#0f172a"
-        avatarSize="52px"
-        fontFamily="inherit"
-        accentColor="#ec3080"
-        apiEndpoint=""
-        apiErrorText="Unable to fetch testimonials from API. Showing fallback items."
-        apiRoleField="author_role"
-        borderRadius="28px"
-        minItemWidth="280px"
-        testimonials={JSON.parse(
-          `[{"id":"1","quote":"This ecommerce site transformed my shopping experience!","avatarUrl":"https://images.unsplash.com/photo-1502685104226-e9a1d1c3d7f8","authorName":"Jane Doe","authorRole":"Customer"},{"id":"2","quote":"I love the variety of products available!","avatarUrl":"https://images.unsplash.com/photo-1502767086630-e1c1b8e3e6d7","authorName":"John Smith","authorRole":"Frequent Buyer"}]`,
-        )}
-        apiQuoteField="quote"
-        cardMinHeight="280px"
-        quoteFontSize="22px"
-        apiAuthorField="author_name"
-        apiAvatarField="avatar_url"
-        apiLoadingText="Loading testimonials from API..."
-        authorFontSize="15px"
-        authorTextColor="#475569"
-        backgroundColor="linear-gradient(135deg, #fff7fb 0%, #f8fafc 52%, #eef2ff 100%)"
-        cardHoverShadow="0 26px 60px rgba(15, 23, 42, 0.14)"
-        quoteLineHeight="1.7"
-        sectionMaxWidth="1180px"
-        showApiPlaceholder={true}
-        apiPlaceholderCount={3}
-        cardBackgroundColor="linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)"
-        cardHoverTranslateY="-6px"
-        secondaryAccentColor="#6366f1"
-      ></Testimonial>
-      <CenteredCta
-        buttons={JSON.parse(
-          `[{"id":"getStarted","link":"/get-started","text":"Get Started","style":"primary","target":"_self"},{"id":"learnMore","link":"/learn-more","text":"Learn More","style":"secondary","target":"_self"}]`,
-        )}
-        subtext="Utilize Ecommerce Site 3 to transform this concept into a sleek, confident page experience."
-        headline="Ready to launch your marketing estate home page?"
-      ></CenteredCta>
-      <Footer
-        gap="32px"
-        style={JSON.parse(`{}`)}
-        logoAlt="Company Logo"
-        logoSrc=""
-        logoText="Ecommerce Site 3"
-        paddingX="24px"
-        paddingY="48px"
-        linkColor="#D1D5DB"
-        textColor="#9CA3AF"
-        borderColor="#374151"
-        socialLinks={JSON.parse(
-          `[{"id":"sm1","url":"#","platform":"facebook"},{"id":"sm2","url":"#","platform":"twitter"},{"id":"sm3","url":"#","platform":"instagram"}]`,
-        )}
-        footerLayout="default"
-        linkFontSize="14px"
-        linkSections={JSON.parse(
-          `[{"id":"footer-company","links":[{"id":"footer-about","url":"#about","text":"About"},{"id":"footer-work","url":"#work","text":"Work"},{"id":"footer-contact","url":"#contact","text":"Contact"}],"title":"Company"},{"id":"footer-resources","links":[{"id":"footer-faq","url":"#faq","text":"FAQ"},{"id":"footer-guides","url":"#guides","text":"Guides"},{"id":"footer-support","url":"#support","text":"Support"}],"title":"Resources"}]`,
-        )}
-        logoMaxWidth="150px"
-        logoTextSize="18px"
-        textFontSize="14px"
-        columnsMobile={1}
-        columnsTablet={2}
-        copyrightText="Copyright 2026 Ecommerce Site 3. All rights reserved."
-        logoTextColor="#F9FAFB"
-        showTopBorder={true}
-        titleFontSize="14px"
-        columnsDesktop={4}
-        linkHoverColor="#F9FAFB"
-        socialIconSize="28px"
-        backgroundColor="#111827"
-        contentMaxWidth="1200px"
-        showSocialLinks={true}
-        socialIconShape="circle"
-        showBottomBorder={true}
-        showLinkSections={true}
-        sectionTitleColor="#F3F4F6"
-      ></Footer>
-    </>
-  );
-}
+export default function MarketingEstateHomePagePage() { // Standardized page component name
+return (
+<><DigitalHeaderBanner cards={JSON.parse(`[{"link":"#offers","title":"Exclusive Offers","description":"Get the best deals on top brands"},{"link":"#new-arrivals","title":"New Arrivals","description":"Explore the latest trends in fashion and technology"},{"link":"#customer-favorites","title":"Customer Favorites","description":"Check out what our customers love the most"}]`)} title="Welcome to Our Ecommerce Platform" ctaText="Shop Now" subtitle="Discover the best products tailored just for you" backgroundImage="https://images.unsplash.com/photo-1511376779570-1a0b8f9e0c3b"></DigitalHeaderBanner>
+<EstatePromoBanner title="Exclusive Property Deals" subtitle="Discover your dream home with our limited-time offers" saleBadge="Sale" socialLinks={JSON.parse(`[{"url":"https://facebook.com","platform":"Facebook"},{"url":"https://instagram.com","platform":"Instagram"},{"url":"https://twitter.com","platform":"Twitter"}]`)} backgroundImage="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0"></EstatePromoBanner>
+<FeatureGrid features={JSON.parse(`[{"icon":"https://images.unsplash.com/photo-1542744095-9a2f1c4d3a4d","title":"User-Friendly Interface","description":"Navigate our site with ease and enjoy a seamless shopping experience."},{"icon":"https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0","title":"Secure Payments","description":"Shop confidently with our secure payment options and data protection."},{"icon":"https://images.unsplash.com/photo-1521747116042-5a810fda9664","title":"Fast Shipping","description":"Get your orders delivered quickly with our efficient shipping services."},{"icon":"https://images.unsplash.com/photo-1512004202024-8c9d0c8b1c1d","title":"24/7 Customer Support","description":"Our dedicated support team is here to assist you anytime."}]`)}></FeatureGrid>
+<Testimonial gap="24px" border="1px solid rgba(226, 232, 240, 0.9)" padding="28px" boxShadow="0 18px 45px rgba(15, 23, 42, 0.08)" textAlign="left" textColor="#0f172a" avatarSize="52px" fontFamily="inherit" accentColor="#ec3080" apiEndpoint="" apiErrorText="Unable to fetch testimonials from API. Showing fallback items." apiRoleField="author_role" borderRadius="28px" minItemWidth="280px" testimonials={JSON.parse(`[{"id":"1","quote":"This ecommerce site transformed my shopping experience!","avatarUrl":"https://images.unsplash.com/photo-1502685104226-e9a1d1c3d7f8","authorName":"Jane Doe","authorRole":"Customer"},{"id":"2","quote":"I love the variety of products available!","avatarUrl":"https://images.unsplash.com/photo-1502767086630-e1c1b8e3e6d7","authorName":"John Smith","authorRole":"Frequent Buyer"}]`)} apiQuoteField="quote" cardMinHeight="280px" quoteFontSize="22px" apiAuthorField="author_name" apiAvatarField="avatar_url" apiLoadingText="Loading testimonials from API..." authorFontSize="15px" authorTextColor="#475569" backgroundColor="linear-gradient(135deg, #fff7fb 0%, #f8fafc 52%, #eef2ff 100%)" cardHoverShadow="0 26px 60px rgba(15, 23, 42, 0.14)" quoteLineHeight="1.7" sectionMaxWidth="1180px" showApiPlaceholder={true} apiPlaceholderCount={3} cardBackgroundColor="linear-gradient(180deg, #ffffff 0%, #f8fafc 100%)" cardHoverTranslateY="-6px" secondaryAccentColor="#6366f1"></Testimonial>
+<CenteredCta buttons={JSON.parse(`[{"id":"getStarted","link":"/get-started","text":"Get Started","style":"primary","target":"_self"},{"id":"learnMore","link":"/learn-more","text":"Learn More","style":"secondary","target":"_self"}]`)} subtext="Utilize Ecommerce Site 3 to transform this concept into a sleek, confident page experience." headline="Ready to launch your marketing estate home page?"></CenteredCta>
+<Footer gap="32px" style={JSON.parse(`{}`)} logoAlt="Company Logo" logoSrc="" logoText="Ecommerce Site 3" paddingX="24px" paddingY="48px" linkColor="#D1D5DB" textColor="#9CA3AF" borderColor="#374151" socialLinks={JSON.parse(`[{"id":"sm1","url":"#","platform":"facebook"},{"id":"sm2","url":"#","platform":"twitter"},{"id":"sm3","url":"#","platform":"instagram"}]`)} footerLayout="default" linkFontSize="14px" linkSections={JSON.parse(`[{"id":"footer-company","links":[{"id":"footer-about","url":"#about","text":"About"},{"id":"footer-work","url":"#work","text":"Work"},{"id":"footer-contact","url":"#contact","text":"Contact"}],"title":"Company"},{"id":"footer-resources","links":[{"id":"footer-faq","url":"#faq","text":"FAQ"},{"id":"footer-guides","url":"#guides","text":"Guides"},{"id":"footer-support","url":"#support","text":"Support"}],"title":"Resources"}]`)} logoMaxWidth="150px" logoTextSize="18px" textFontSize="14px" columnsMobile={1} columnsTablet={2} copyrightText="Copyright 2026 Ecommerce Site 3. All rights reserved." logoTextColor="#F9FAFB" showTopBorder={true} titleFontSize="14px" columnsDesktop={4} linkHoverColor="#F9FAFB" socialIconSize="28px" backgroundColor="#111827" contentMaxWidth="1200px" showSocialLinks={true} socialIconShape="circle" showBottomBorder={true} showLinkSections={true} sectionTitleColor="#F3F4F6"></Footer></>
+);
+};

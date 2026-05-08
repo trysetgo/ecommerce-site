@@ -163,22 +163,10 @@ const FashionScrollRevealLandingV1 = (incomingProps) => {
     offset: ["start start", "end end"],
   });
 
-  const narrativeOpacity1 = useTransform(
-    scrollYProgress,
-    [0, 0.25, 0.3],
-    [0, 1, 0],
-  );
-  const narrativeOpacity2 = useTransform(
-    scrollYProgress,
-    [0.33, 0.58, 0.63],
-    [0, 1, 0],
-  );
-  const narrativeOpacity3 = useTransform(
-    scrollYProgress,
-    [0.66, 0.91, 1],
-    [0, 1, 1],
-  );
-
+  const narrativeOpacity1 = useTransform(scrollYProgress, [0, 0.25, 0.3], [0, 1, 0]);
+  const narrativeOpacity2 = useTransform(scrollYProgress, [0.33, 0.58, 0.63], [0, 1, 0]);
+  const narrativeOpacity3 = useTransform(scrollYProgress, [0.66, 0.91, 1], [0, 1, 1]);
+  
   const narrativeY1 = useTransform(scrollYProgress, [0, 0.25], [50, 0]);
   const narrativeY2 = useTransform(scrollYProgress, [0.33, 0.58], [50, 0]);
   const narrativeY3 = useTransform(scrollYProgress, [0.66, 0.91], [50, 0]);
@@ -276,15 +264,9 @@ const FashionScrollRevealLandingV1 = (incomingProps) => {
 
       {/* 3. REVEAL PANELS */}
       {sections.revealPanels.enabled && (
-        <section
-          className="w-full flex flex-col"
-          style={{ backgroundColor: global.theme.primary }}
-        >
+        <section className="w-full flex flex-col" style={{ backgroundColor: global.theme.primary }}>
           {sections.revealPanels.items.map((panel, idx) => (
-            <div
-              key={idx}
-              className="relative w-full h-[80vh] md:h-screen flex items-center justify-center overflow-hidden group"
-            >
+            <div key={idx} className="relative w-full h-[80vh] md:h-screen flex items-center justify-center overflow-hidden group">
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-[2s] ease-out group-hover:scale-105"
                 style={{ backgroundImage: `url(${panel.image})` }}
@@ -305,10 +287,7 @@ const FashionScrollRevealLandingV1 = (incomingProps) => {
 
       {/* 4. PRODUCTS GRID */}
       {sections.products.enabled && (
-        <section
-          className="py-32 px-4 md:px-12 max-w-screen-2xl mx-auto"
-          style={{ backgroundColor: global.theme.primary }}
-        >
+        <section className="py-32 px-4 md:px-12 max-w-screen-2xl mx-auto" style={{ backgroundColor: global.theme.primary }}>
           <FadeInUp>
             <h2 className="text-3xl md:text-5xl uppercase tracking-widest font-light mb-16 border-b border-white/10 pb-8 text-center md:text-left">
               {sections.products.title}
@@ -316,11 +295,7 @@ const FashionScrollRevealLandingV1 = (incomingProps) => {
           </FadeInUp>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {sections.products.items.map((product, idx) => (
-              <FadeInUp
-                key={idx}
-                delay={idx * 0.1}
-                className="group cursor-pointer"
-              >
+              <FadeInUp key={idx} delay={idx * 0.1} className="group cursor-pointer">
                 <div className="relative aspect-[3/4] overflow-hidden bg-neutral-900 mb-6">
                   <img
                     src={product.image}
@@ -340,10 +315,7 @@ const FashionScrollRevealLandingV1 = (incomingProps) => {
                   <h3 className="text-lg uppercase tracking-wide font-light text-white/90">
                     {product.name}
                   </h3>
-                  <span
-                    className="text-md font-light"
-                    style={{ color: global.theme.muted }}
-                  >
+                  <span className="text-md font-light" style={{ color: global.theme.muted }}>
                     {product.price}
                   </span>
                 </div>
@@ -355,22 +327,13 @@ const FashionScrollRevealLandingV1 = (incomingProps) => {
 
       {/* 5. EDITORIAL GALLERY */}
       {sections.gallery.enabled && (
-        <section
-          className="py-24 overflow-hidden"
-          style={{ backgroundColor: global.theme.secondary }}
-        >
+        <section className="py-24 overflow-hidden" style={{ backgroundColor: global.theme.secondary }}>
           <FadeInUp className="text-center mb-16">
-            <h2 className="text-sm uppercase tracking-[0.4em] text-white/50">
-              {sections.gallery.title}
-            </h2>
+            <h2 className="text-sm uppercase tracking-[0.4em] text-white/50">{sections.gallery.title}</h2>
           </FadeInUp>
           <div className="flex flex-col md:flex-row gap-8 px-4 md:px-12">
             {sections.gallery.images.map((img, idx) => (
-              <FadeInUp
-                key={idx}
-                delay={idx * 0.2}
-                className={`relative overflow-hidden group flex-1 ${idx === 1 ? "md:-translate-y-12" : ""}`}
-              >
+              <FadeInUp key={idx} delay={idx * 0.2} className={`relative overflow-hidden group flex-1 ${idx === 1 ? 'md:-translate-y-12' : ''}`}>
                 <img
                   src={img}
                   alt={`Editorial ${idx}`}
@@ -384,18 +347,12 @@ const FashionScrollRevealLandingV1 = (incomingProps) => {
 
       {/* 6. TESTIMONIALS */}
       {sections.testimonials.enabled && (
-        <section
-          className="py-32 md:py-48 px-4 flex items-center justify-center text-center"
-          style={{ backgroundColor: global.theme.primary }}
-        >
+        <section className="py-32 md:py-48 px-4 flex items-center justify-center text-center" style={{ backgroundColor: global.theme.primary }}>
           <FadeInUp className="max-w-5xl">
             <p className="text-3xl md:text-6xl font-light uppercase tracking-tight leading-tight mb-12 text-white/90">
               "{sections.testimonials.quote}"
             </p>
-            <p
-              className="text-sm uppercase tracking-[0.3em]"
-              style={{ color: global.theme.accent }}
-            >
+            <p className="text-sm uppercase tracking-[0.3em]" style={{ color: global.theme.accent }}>
               — {sections.testimonials.author}
             </p>
           </FadeInUp>

@@ -2,7 +2,7 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { getGlobalIconComponent } from "../../../constants/globalIconsLibraryProps";
+import { getGlobalIconComponent } from "./GlobalIconsLibraryProps";
 
 export const featureGridDefaultProps = {
   title: "Core Features",
@@ -94,27 +94,8 @@ const FeatureGridComponent = (props) => {
     <section style={sectionStyle} className={className}>
       <div style={{ maxWidth: containerMaxWidth, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: "32px" }}>
-          <h2
-            style={{
-              color: headingColor,
-              fontSize: "2.25rem",
-              fontWeight: "800",
-              margin: 0,
-            }}
-          >
-            {title}
-          </h2>
-          <p
-            style={{
-              color: subheadingColor,
-              fontSize: "1.125rem",
-              marginTop: "8px",
-              maxWidth: "60ch",
-              margin: "8px auto 0",
-            }}
-          >
-            {subtitle}
-          </p>
+          <h2 style={{ color: headingColor, fontSize: "2.25rem", fontWeight: "800", margin: 0 }}>{title}</h2>
+          <p style={{ color: subheadingColor, fontSize: "1.125rem", marginTop: "8px", maxWidth: "60ch", margin: "8px auto 0" }}>{subtitle}</p>
         </div>
         <div style={gridStyle}>
           {safeFeatures.map((feature) => {
@@ -143,32 +124,10 @@ const FeatureGridComponent = (props) => {
                     marginBottom: "16px",
                   }}
                 >
-                  {IconComponent ? (
-                    <IconComponent
-                      style={{ color: iconColor }}
-                      size={parseFloat(iconSize) * 0.5}
-                    />
-                  ) : null}
+                  {IconComponent ? <IconComponent style={{ color: iconColor }} size={parseFloat(iconSize) * 0.5} /> : null}
                 </div>
-                <h3
-                  style={{
-                    color: featureTitleColor,
-                    fontSize: "1.25rem",
-                    fontWeight: "700",
-                    margin: "0 0 8px 0",
-                  }}
-                >
-                  {feature.title}
-                </h3>
-                <p
-                  style={{
-                    color: featureDescriptionColor,
-                    fontSize: "1rem",
-                    margin: 0,
-                  }}
-                >
-                  {feature.description}
-                </p>
+                <h3 style={{ color: featureTitleColor, fontSize: "1.25rem", fontWeight: "700", margin: "0 0 8px 0" }}>{feature.title}</h3>
+                <p style={{ color: featureDescriptionColor, fontSize: "1rem", margin: 0 }}>{feature.description}</p>
               </div>
             );
           })}
@@ -181,14 +140,12 @@ const FeatureGridComponent = (props) => {
 FeatureGridComponent.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  features: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      iconName: PropTypes.string,
-      title: PropTypes.string,
-      description: PropTypes.string,
-    }),
-  ),
+  features: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    iconName: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+  })),
   columns: PropTypes.number,
   gap: PropTypes.string,
   cardBackgroundColor: PropTypes.string,

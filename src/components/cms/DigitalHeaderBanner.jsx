@@ -3,16 +3,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export const DIGITAL_HEADER_ICON_OPTIONS = [
-  "✨",
-  "🚀",
-  "📈",
-  "🎨",
-  "💡",
-  "⚡",
-  "🎯",
-  "🧭",
-];
+export const DIGITAL_HEADER_ICON_OPTIONS = ["✨", "🚀", "📈", "🎨", "💡", "⚡", "🎯", "🧭"];
 
 export const digitalHeaderBannerDefaultProps = {
   sectionBackground: "#fdfbff",
@@ -21,8 +12,7 @@ export const digitalHeaderBannerDefaultProps = {
   secondaryTextColor: "#4b5563",
   heroAccentBarColor: "#ec307c",
   heroTitle: "We're a digital agency.",
-  heroSubtitle:
-    "Designing modern experiences for bold clients and growing brands.",
+  heroSubtitle: "Designing modern experiences for bold clients and growing brands.",
   logoText: "Digital Logo",
   logoHref: "#",
   logoFontFamily: "Inter, system-ui, sans-serif",
@@ -54,8 +44,7 @@ export const digitalHeaderBannerDefaultProps = {
     {
       id: "card-1",
       title: "Future Vision",
-      description:
-        "Future-forward thinking to keep your brand ahead of the curve.",
+      description: "Future-forward thinking to keep your brand ahead of the curve.",
       icon: "✨",
       highlight: "#ec307c",
       backgroundColor: "#ffffff",
@@ -73,8 +62,7 @@ export const digitalHeaderBannerDefaultProps = {
     {
       id: "card-3",
       title: "Innovative Solutions",
-      description:
-        "Engineering impact with scalable, thoughtful digital products.",
+      description: "Engineering impact with scalable, thoughtful digital products.",
       icon: "📈",
       highlight: "#f2c742",
       backgroundColor: "#ffffff",
@@ -232,9 +220,7 @@ const DigitalHeaderBanner = ({
                 className="digital-header-nav-link"
                 data-active={link.active || false}
                 target={link.target || "_self"}
-                rel={
-                  link.target === "_blank" ? "noopener noreferrer" : undefined
-                }
+                rel={link.target === "_blank" ? "noopener noreferrer" : undefined}
               >
                 {link.label}
               </a>
@@ -253,15 +239,7 @@ const DigitalHeaderBanner = ({
               }}
             />
             <h1 style={titleStyle}>{heroTitle}</h1>
-            <p
-              style={{
-                color: secondaryTextColor,
-                fontSize: "16px",
-                marginTop: "16px",
-              }}
-            >
-              {heroSubtitle}
-            </p>
+            <p style={{ color: secondaryTextColor, fontSize: "16px", marginTop: "16px" }}>{heroSubtitle}</p>
             <div style={{ marginTop: "24px" }}>
               <a
                 href={ctaHref || "#"}
@@ -307,9 +285,7 @@ const DigitalHeaderBanner = ({
               }}
             >
               <div style={{ fontSize: "24px" }}>{card.icon || "✨"}</div>
-              <h3 style={{ margin: 0, fontSize: "18px", fontWeight: 700 }}>
-                {card.title}
-              </h3>
+              <h3 style={{ margin: 0, fontSize: "18px", fontWeight: 700 }}>{card.title}</h3>
               <p style={{ margin: 0, fontSize: "14px" }}>{card.description}</p>
               <div style={highlightStyle(card.highlight || accentColor)} />
             </div>

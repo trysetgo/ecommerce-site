@@ -1,61 +1,8 @@
-import React from "react";
-import HomeServicesLanding from "../components/cms/HomeServicesLanding.jsx";
+import React from 'react';
+import HomeServicesLanding from '../components/cms/HomeServicesLanding.jsx';
 
-export default function CategoryPage() {
-  return (
-    <>
-      <HomeServicesLanding
-        steps={JSON.parse(
-          `[{"id":"step-1","icon":"request","title":"Choose a Service","description":"Pick a category, time slot, and service details in under two minutes."},{"id":"step-2","icon":"match","title":"Get Matched Fast","description":"We assign a vetted professional based on location, skill, and availability."},{"id":"step-3","icon":"delivery","title":"Done Right, On Time","description":"Track arrival, review pricing, and manage follow-up directly from one place."}]`,
-        )}
-        title="Book Trusted Home Services"
-        ctaTitle="Book Now"
-        services={JSON.parse(
-          `[{"id":"service-1","icon":"cleaning","price":"Starts at $79","title":"Deep Home Cleaning","description":"Kitchen, bathroom, bedroom, and living area refresh with eco-safe supplies."},{"id":"service-2","icon":"repair","price":"Starts at $49","title":"Handyman Repairs","description":"Furniture fixes, wall-mounts, minor electrical work, and home touch-ups."},{"id":"service-3","icon":"inspection","price":"Starts at $59","title":"Appliance Servicing","description":"Preventive maintenance and issue diagnosis for ACs, washers, and kitchen gear."},{"id":"service-4","icon":"booking","price":"Starts at $129","title":"Move-in Setup","description":"Cleaning, utility setup support, furniture assembly, and first-day essentials."}]`,
-        )}
-        subtitle="From cleaning and repairs to appliance servicing, schedule verified professionals with clear pricing and fast arrival windows."
-        accentTag="On-demand trusted care"
-        heroImage="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1800&q=80"
-        textColor="#475569"
-        background="linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 18%, #ffffff 18%, #ffffff 100%)"
-        stepsTitle="How It Works"
-        accentColor="#f97316"
-        borderColor="#dbeafe"
-        ctaSubtitle="Reserve a trusted professional today and get real-time booking updates, arrival tracking, and easy rebooking."
-        heroOverlay="linear-gradient(115deg, rgba(7, 33, 58, 0.9) 0%, rgba(7, 33, 58, 0.56) 48%, rgba(7, 33, 58, 0.14) 100%)"
-        trustPoints={JSON.parse(
-          `["Verified professionals","Transparent pricing","Same-day availability"]`,
-        )}
-        headingColor="#0f172a"
-        surfaceColor="#ffffff"
-        estimateItems={JSON.parse(
-          `[{"id":"estimate-1","label":"Base visit","value":"$39"},{"id":"estimate-2","label":"Service add-ons","value":"$25"},{"id":"estimate-3","label":"Priority slot","value":"$15"}]`,
-        )}
-        estimateTitle="Pricing Estimate"
-        heroPanelText="See popular services, expected arrival windows, and estimate pricing before you confirm a booking."
-        servicesTitle="Popular Services"
-        stepsSubtitle="A straightforward booking flow designed for trust, speed, and clear communication from request to completion."
-        ctaPrimaryHref="#"
-        ctaPrimaryText="Schedule Service"
-        heroPanelLabel="Fast scheduling"
-        heroPanelTitle="Reliable home help without the call-center hassle"
-        lightTextColor="#64748b"
-        primaryCtaHref="#book-now"
-        primaryCtaText="Book Now"
-        testimonialName="Riya Sharma"
-        testimonialRole="Apartment Owner, Bangalore"
-        ctaSecondaryHref="#"
-        ctaSecondaryText="Talk to Support"
-        estimateSubtitle="Use a simple starting estimate to understand what a standard booking could cost before extras."
-        secondaryCtaHref="#services"
-        secondaryCtaText="Browse Services"
-        servicesSubtitle="Choose from the most-booked categories for everyday fixes, seasonal upkeep, and move-in support."
-        softSurfaceColor="#eff6ff"
-        testimonialImage="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=900&q=80"
-        testimonialQuote="Booking took less than five minutes, the technician arrived on time, and the final price matched the estimate exactly."
-        estimateTotalLabel="Estimated total"
-        estimateTotalValue="$79"
-      ></HomeServicesLanding>
-    </>
-  );
-}
+export default function CategoryPage() { // Standardized page component name
+return (
+<><HomeServicesLanding steps={JSON.parse(`[{"id":"step-1","icon":"request","title":"Choose a Service","description":"Pick a category, time slot, and service details in under two minutes."},{"id":"step-2","icon":"match","title":"Get Matched Fast","description":"We assign a vetted professional based on location, skill, and availability."},{"id":"step-3","icon":"delivery","title":"Done Right, On Time","description":"Track arrival, review pricing, and manage follow-up directly from one place."}]`)} title="Book Trusted Home Services" ctaTitle="Book Now" services={JSON.parse(`[{"id":"service-1","icon":"cleaning","price":"Starts at $79","title":"Deep Home Cleaning","description":"Kitchen, bathroom, bedroom, and living area refresh with eco-safe supplies."},{"id":"service-2","icon":"repair","price":"Starts at $49","title":"Handyman Repairs","description":"Furniture fixes, wall-mounts, minor electrical work, and home touch-ups."},{"id":"service-3","icon":"inspection","price":"Starts at $59","title":"Appliance Servicing","description":"Preventive maintenance and issue diagnosis for ACs, washers, and kitchen gear."},{"id":"service-4","icon":"booking","price":"Starts at $129","title":"Move-in Setup","description":"Cleaning, utility setup support, furniture assembly, and first-day essentials."}]`)} subtitle="From cleaning and repairs to appliance servicing, schedule verified professionals with clear pricing and fast arrival windows." accentTag="On-demand trusted care" heroImage="https://images.unsplash.com/photo-1556911220-bff31c812dba?auto=format&fit=crop&w=1800&q=80" textColor="#475569" background="linear-gradient(180deg, #f0f9ff 0%, #e0f2fe 18%, #ffffff 18%, #ffffff 100%)" stepsTitle="How It Works" accentColor="#f97316" borderColor="#dbeafe" ctaSubtitle="Reserve a trusted professional today and get real-time booking updates, arrival tracking, and easy rebooking." heroOverlay="linear-gradient(115deg, rgba(7, 33, 58, 0.9) 0%, rgba(7, 33, 58, 0.56) 48%, rgba(7, 33, 58, 0.14) 100%)" trustPoints={JSON.parse(`["Verified professionals","Transparent pricing","Same-day availability"]`)} headingColor="#0f172a" surfaceColor="#ffffff" estimateItems={JSON.parse(`[{"id":"estimate-1","label":"Base visit","value":"$39"},{"id":"estimate-2","label":"Service add-ons","value":"$25"},{"id":"estimate-3","label":"Priority slot","value":"$15"}]`)} estimateTitle="Pricing Estimate" heroPanelText="See popular services, expected arrival windows, and estimate pricing before you confirm a booking." servicesTitle="Popular Services" stepsSubtitle="A straightforward booking flow designed for trust, speed, and clear communication from request to completion." ctaPrimaryHref="#" ctaPrimaryText="Schedule Service" heroPanelLabel="Fast scheduling" heroPanelTitle="Reliable home help without the call-center hassle" lightTextColor="#64748b" primaryCtaHref="#book-now" primaryCtaText="Book Now" testimonialName="Riya Sharma" testimonialRole="Apartment Owner, Bangalore" ctaSecondaryHref="#" ctaSecondaryText="Talk to Support" estimateSubtitle="Use a simple starting estimate to understand what a standard booking could cost before extras." secondaryCtaHref="#services" secondaryCtaText="Browse Services" servicesSubtitle="Choose from the most-booked categories for everyday fixes, seasonal upkeep, and move-in support." softSurfaceColor="#eff6ff" testimonialImage="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=900&q=80" testimonialQuote="Booking took less than five minutes, the technician arrived on time, and the final price matched the estimate exactly." estimateTotalLabel="Estimated total" estimateTotalValue="$79"></HomeServicesLanding></>
+);
+};
